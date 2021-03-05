@@ -318,16 +318,17 @@ def statistical_analysis(tabu_max_iters : int, M:int = 20, return_values = False
 
     if return_values:
         return return_values
-
+    
     mean = sum([M_i[1] for M_i in M_sols])/M 
     median = get_median(M_sols) 
     sigma = std(M_sols, mean)
-    print(f"{M} iterations for {i_max} iteratios of tabu search: ")
+    print(f"{M} iterations for {i_max} iterations of tabu search: ")
     print(f"Best solution: {best_m_sol}")
     print(f"Worst solution: {worst_m_sol}")
     print(f"Mean value of the objective function: {mean}")
-    print(f"Median solution: {median}")
-    print(f"The standard deviation: {sigma}")
+    print(f"Median solution(s): {median}")
+    print(f"The standard deviation: {sigma:.3f}")
+
 
 if __name__ == '__main__':
 
